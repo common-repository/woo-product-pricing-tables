@@ -1,0 +1,897 @@
+#ptwCanvas {
+	min-height: 200px;
+	/*background-color: #e9f4f4;*/
+}
+.ui-state-highlight {
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, #eeeeee 1px, #eeeeee 7px);
+	border: 2px solid #09c9da;
+	display: block;
+}
+#ptwCanvas .ui-state-highlight {
+	height: 90px !important;
+	width: 100% !important;
+	margin: 0;
+	padding: 0;
+	z-index: 9999999;
+}
+/*Blocks settings*/
+.ptwBlock:hover {
+	/*outline: 2px solid #f2684d;
+	border-left: 2px solid #f2684d;
+	border-right: 2px solid #f2684d;*/
+	/*border: 2px solid #f2684d;
+	padding: 0;*/
+}
+.ptwBlock.ui-sortable-helper {
+	margin-top: 0 !important;
+}
+.ptwBlock.ptwInSortProcess {
+	-webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.75);
+	
+	overflow: hidden;
+	/*margin-top: 20px;
+	height: 178px !important;*/
+}
+/*Block Elements settings*/
+.ptwEl:not(.ptwElImg):not(.ptwElInput):not(.ptwElWithArea):hover,
+.ptwElImg:hover .ptwGalItemImgShell,
+.ptwElInput:hover .ptwInputShell,
+.ptwElWithArea:not(.ptwCol):hover .ptwElArea,
+.ptwEl.mce-edit-focus {
+	outline: 1px solid #09c9da;
+}
+.ptwElWithArea.ptwCol:hover .ptwElArea {
+	box-shadow: 0px 0px 3px #09c9da;
+}
+.mce-not-inline {
+	
+}
+.ptwElArea {
+	position: relative;
+}
+/*Element menus*/
+.ptwElMenu {
+	position: absolute;
+	/*bottom: calc(100%);*/
+	/*left: 0;*/
+	background-color: transparent;
+	color: #fff;
+	z-index: 9999;
+	
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+}
+.ptwElMenu.active {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+}
+.ptwElMenu .ptwElMenuMainPanel {
+	background-color: rgba(45, 34, 52, 0.96);
+	padding: 5px 10px;
+	border-radius: 3px;
+	font-size: 16px;
+}
+.ptwElMenu.ptwMenuSubOpened .ptwElMenuMainPanel {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.ptwElMenu label,
+label.ptwElMenuSubPanelRow {
+	font-weight: normal;
+}
+label.ptwElMenuSubPanelRow {
+	width: 100%;
+	color: #fff;
+	margin: 0;
+	padding: 5px 0;
+	display: table;
+	text-align: left;
+}
+.ptwElMenuSubPanelRow .mce-input-name-txt:not(.mce-input-name-not-first) {
+	display: table-cell;
+	padding-right: 10px;
+	padding-top: 5px;
+	width: 1px;
+}
+.ptwElMenu input[type=text]:not(.ptwColorpickerInput),
+.ptwElMenuSubPanelRow input[type=text]:not(.ptwColorpickerInput),
+.ptwElMenuSubPanelRow textarea,
+.ptwElMenuSubPanelRow select {
+	color: #fff;
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	display: table-cell;
+}
+
+[data-sub-panel="add_attr"] > label > * {
+	display: table-cell;
+}
+[data-sub-panel="add_attr"] .fa {
+	vertical-align: top;
+	font-size: 16px;
+	padding-top: 10px;
+	text-align: center;
+}
+
+[data-sub-panel="add_attr"] [data-action="add_new_attr"] {
+	background: #333;
+	color: #FFF;
+	line-height: 26px;
+	border-radius: 7px;
+}
+#ptwCanvas .ptwElMenu input[type=text]:not(.ptwColorpickerInput),
+#ptwCanvas .ptwElMenuSubPanelRow input[type=text]:not(.ptwColorpickerInput),
+#ptwCanvas .ptwElMenuSubPanelRow textarea,
+#ptwCanvas .ptwElMenuSubPanelRow select {
+	color: #fff;
+}
+.ptwElMenu .ptwElMenuContent:after {
+	border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+	border-top: 5px solid rgba(45, 34, 52, 0.96);
+    clear: both;
+    content: "";
+    height: 0;
+    left: calc(50% - 2.5px);	/*Total center of our panel*/
+    position: absolute;
+    bottom: 0;
+    width: 0;
+}
+.ptwElMenu .ptwElMenuContent {
+	margin-bottom: 5px;
+}
+.ptwElMenu.ptwElMenuBottom {
+	/*bottom: 0;
+	top: 100%;*/
+}
+.ptwElMenu.ptwElMenuBottom .ptwElMenuContent {
+	margin-bottom: 0px;
+	margin-top: 5px;
+}
+.ptwElMenu.ptwElMenuBottom .ptwElMenuContent:after {
+	bottom: calc(100% - 5px);
+	border-top: none;
+	border-bottom: 5px solid rgba(45, 34, 52, 0.96);
+}
+.ptwMainTopBar,
+.ptwMainBar,
+.ptwBlocksBar,
+.context-menu-list,
+.modal,
+.button,
+.button-primary,
+.ptwWpTabs {
+	font-family: Roboto;
+}
+/*.ptwElMenu:after {
+	border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+	border-top: 5px solid #263238;
+    clear: both;
+    content: "";
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    width: 0;
+}
+.ptwElMenu.ptwElMenuBottom:after {
+	top: -5px;
+	border-top: none;
+	border-bottom: 5px solid #263238;
+}*/
+.ptwElMenu .ptwElMenuBtn {
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+}
+.ptwElMenu .ptwElMenuBtn label {
+	cursor: pointer;
+}
+.ptwElMenu .ptwElMenuBtn:hover {
+	color: #09c9da;
+}
+.ptwElMenuSubPanel {
+	padding-top: 10px;
+	display: none;
+	background-color: rgba(57, 45, 63, 0.96);
+	padding: 5px 10px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+.ptwElMenuSubPanel .ptwElMenuSubPanelRow:not(:last-of-type) {
+	border-bottom: 1px solid #dddddd;
+}
+#ptwCanvas .ptwElMenuSubPanel .ptwElMenuSubPanelRow:not(:last-of-type) {
+	border-bottom: 1px solid #37474f;
+}
+.modal-content .ptwElMenuSubPanel {
+	display: block;
+}
+.ptwElMenu .ptwElMenuBtnDelimiter {
+	display: inline;
+	background-color: #5b4b63;
+	padding: 0 1px;
+	margin: 0 7px;
+}
+/*.ptwEl:hover .ptwElMenu {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+}*/
+/*Block Toolbar*/
+#ptwBlockToolbarEx {
+	display: none !important;
+}
+.ptwToolbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+	z-index: 9999;
+	color: #fff;
+	font-size: 20px;
+	padding: 5px 5px 0 0;
+}
+.ptwToolbar .ptwToolItem {
+	cursor: pointer;
+	border-radius: 50%;
+	padding: 5px;
+	font-size: 30px;
+	background-color: #555555;
+	display: inline-block;
+}
+.ptwToolbar .ptwToolItem:hover {
+	background-color: #09c9da;
+}
+.ptwBlock:hover .ptwBlockToolbar {
+	display: block;
+}
+.ui-state-highlight + .ptwBlock,
+.ui-sortable-helper + .ptwBlock,
+.ptwBlock:first-child {
+	margin-top: 0 !important;
+    /*height: 100%;*/
+}
+/*.ptwBlockContent {
+    height: 100%;
+}*/
+/*Main ajax (or other events) loader*/
+#ptwMainLoder {
+	position: fixed;
+	top: 0;
+	left: calc(50% - 20px);
+	width: 40px;
+	height: 8px;
+	background-repeat: no-repeat;
+	background-image: url(../../../img/loading.gif);
+	background-color: #fff;
+	border: 1px solid #000;
+	padding: 5px;
+	z-index: 999999;
+	display: none;
+}
+/*Set image button*/
+.ptwChangeImgBtn {
+	width: 150px;
+	height: 150px;
+	top: calc(50% - 75px);
+	left: calc(50% - 75px);
+	background-color: rgba(61, 70, 85, 0.5);
+	text-transform: uppercase;
+	position: absolute;
+	z-index: 9999;
+	border: 2px solid #f2684d;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+}
+.ptwChangeImgBtn .ptwChangeImgBtnTxt {
+	color: #fff;
+    font-size: 12px;
+    padding: 10px;
+}
+.ptwChangeImgBtn .ptwChangeImgBtnIcon {
+	font-size: 80px;
+    left: calc(50% - 35px);
+    position: absolute;
+    top: calc(50% - 35px);
+}
+.ptwElImg:hover .ptwChangeImgBtn  {
+	display: block;
+}
+/*fix for wp-admin/css/common.css*/
+body a:focus {
+	box-shadow: none;
+}
+html, body {
+	height: auto;
+}
+/*fix for context menu*/
+.context-menu-list {
+	min-width: 300px;
+	background-color: #263238;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	z-index: 99999;
+}
+.context-menu-item {
+	padding: 15px 20px;
+	margin-bottom: 1px;
+	font-size: 16px;
+}
+.context-menu-item:hover .ptwBlockMenuElAct,
+.context-menu-item:hover .ptwBlockMenuElTitle,
+.context-menu-item:hover .ptwBlockMenuElRightAct {
+	color: #09c9da;
+}
+/*.ptwBlockMenuElTitle  {
+	color: #09c9da;
+}*/
+.ptwBlockMenuDelim {
+	width: 100%;
+	height: 1px;
+	background-color: #37474f;
+	clear: both;
+	margin: 10px auto 0;
+}
+/*.context-menu-item .glyphicon {
+	color: #00c3aa;
+}*/
+.context-menu-item,
+.context-menu-item:hover,
+.context-menu-item:active,
+.context-menu-item:focus {
+	background-color: transparent;
+}
+/*fix for colorpicker (spectrum)*/
+.sp-replacer, .sp-preview, .sp-preview-inner {
+	border-radius: 50%;
+}
+.sp-dd {
+	display: none;
+}
+.sp-replacer {
+	/*height: 30px;
+	width: 30px;*/
+	background-color: transparent;
+	border: none;
+	margin-top: -3px;
+	overflow: auto;
+	padding: 0;
+}
+.sp-preview {
+	width: 30px;
+	height: 30px;
+	border: 2px solid #fff;
+}
+.sp-palette .sp-thumb-el {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin: 5px;
+}
+.sp-palette .sp-thumb-inner {
+	border-radius: 50%;
+}
+.sp-container {
+	background-color: #3d4655;
+	border: 2px solid #f2684d;
+	border-radius: 5px;
+}
+.sp-container:hover {
+	background-color: #2a313c;
+}
+/*block menus*/
+#ptwBlockMenuExl {
+	display: none;
+}
+.ptwBlockMenuElTitle {
+	padding-left: 10px;
+}
+.ptwBlockMenuElTitle, .ptwBlockMenuElAct, .ptwBlockMenuElRightAct {
+	display: inline;
+}
+.ptwBlockMenuElRightAct {
+	float: right;
+	/*width: 40px;*/	/*Maybe we will need to change this in future - so be carefull*/
+	text-align: center;
+}
+/*block menu - align*/
+/*.ptwBlockMenuEl[data-menu="align"] {
+	padding: 15px 30px;
+}*/
+.ptwBlockMenuElTitle.ptwBlockMenuElAlignTitle {
+	display: block;
+	padding-left: 0;
+}
+.ptwBlockMenuElAlignContent {
+	padding-top: 10px;
+}
+/*.ptwBlockMenuElAlignContent .iradio_minimal {
+	vertical-align: top;
+}
+.ptwBlockMenuElAlignContent .iradio_minimal:first-of-type {
+	float: left;
+}
+.ptwBlockMenuElAlignContent .iradio_minimal:last-of-type {
+	float: right;
+}*/
+.ptwBlockMenuElTitle.ptwBlockMenuElAlignTitle, .ptwBlockMenuElAlignContent {
+	text-align: left;
+}
+.ptwBlockMenuElElignBtn .glyphicon {
+	color: #5c727d;
+	font-size: 26px;
+}
+.ptwBlockMenuElElignBtn:hover,
+.ptwBlockMenuElElignBtn.active {
+	color: #09c9da;
+}
+.ptwBlockMenuElElignBtn[data-align="left"] {
+	text-align: left;
+}
+.ptwBlockMenuElElignBtn[data-align="center"] {
+	text-align: center;
+}
+.ptwBlockMenuElElignBtn[data-align="right"] {
+	text-align: right;
+}
+/*wp admin toolbar fix*/
+#wpadminbar {
+	/*z-index: 1;*/
+	display: block;
+}
+/*slider slides manager*/
+#ptwSlideManageItemExl {
+	display: none;
+}
+.ptwSlidesListPrev {
+	text-align: center;
+}
+.ptwSlideManageItem {
+	display: inline-block;
+	position: relative;
+	max-height: 150px;
+	overflow: hidden;
+	vertical-align: top;
+	cursor: move;
+	margin: 0 5px 10px;
+	outline: 1px solid #dddddd;
+}
+.ptwSlideManageItemToolbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+}
+.ptwSlideManageItem:hover .ptwSlideManageItemToolbar {
+	display: block;
+}
+.ptwSlideManageItem img {
+	max-width: 150px;
+	height: auto;
+}
+.ptwSlideManageItem:hover img {
+	opacity: 0.7;
+}
+.ptwSlidesListPrev .ui-state-highlight {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+/*.ptwSlidesListPrev .ptwSlideManageAddBtn {
+	color: #fff;
+	text-decoration: none;
+	padding-top: 40px;
+	font-size: 40px;
+}
+.ptwSlidesListPrev .ptwSlideManageAddBtn:hover {
+	color: #09c9da;
+	border-color: #09c9da;
+}*/
+#ptwManageSlidesWnd .modal-dialog {
+	/*width: 90%;*/
+}
+#ptwManageSlidesWnd {
+	z-index: 99999;
+}
+/*bootstrap popup settings*/
+.modal {
+	text-align: center;
+	z-index: 10050 !important;
+}
+.modal:before {
+	display: inline-block;
+	vertical-align: middle;
+	content: " ";
+	height: 100%;
+}
+.close {
+	background-color: transparent !important;
+	color: #09c9da;
+	opacity: 1 !important;
+}
+.close:hover {
+	color: #ff5ea8;
+}
+.modal-dialog .close {
+	margin-top: 2px;
+	height: auto;
+	float: right;
+	line-height: normal;
+}
+.modal-dialog {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+}
+.modal-dialog .modal-content {
+	border: none;
+}
+.modal-dialog .modal-content .modal-title {
+	text-transform: uppercase;
+	color: #263238;
+}
+.modal-dialog .modal-content .modal-body {
+	background-color: #fff;
+}
+.modal-dialog .modal-content .modal-footer {
+	background-color: #eeeeee;
+	border-top: none;
+}
+.modal-dialog .modal-content {
+	border-radius: 0px;	/*Let it be 0 for now - as it have some problems*/
+}
+/*Gallery items*/
+#ptwCanvas .ui-state-highlight-gal-item {
+	outline: 2px #09c9da dashed;
+}
+#ptwCanvas .ui-state-highlight-gal-item * {
+	opacity: 0.6;
+}
+.mce-ico.mce-i-tables_remove {
+	display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    position: relative;
+    top: 1px;
+}
+.mce-ico.mce-i-tables_remove:before{content:"\e020"}
+
+.ptwMainSaveBtnLoader {
+	display: none;
+	position: absolute;
+	top: 5px;
+	left: calc(50% - 10px);
+}
+.ptwMainSaveBtn {
+	position: relative;
+}
+/*tabs*/
+.ptwWpTabs .nav-tab-wrapper {
+	border: none;
+	padding-left: 0;
+	padding-bottom: 20px;
+}
+.ptwWpTabs .nav-tab-wrapper .nav-tab {
+	color: #dddddd;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	background-color: #fff;
+	border: 2px solid #dddddd;
+	padding: 9px 20px;
+	margin: 0;
+	margin-right: -2px;
+	display: inline;
+	
+}
+.ptwWpTabs .nav-tab-wrapper .nav-tab:hover,
+.ptwWpTabs .nav-tab-wrapper .nav-tab.nav-tab-active {
+	color: #263238;
+	background-color: #dddddd;
+}
+.ptwWpTabs .nav-tab-wrapper .nav-tab:first-of-type {
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+}
+.ptwWpTabs .nav-tab-wrapper .nav-tab:last-of-type {
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
+/*****/
+#ptwSubSettingsWnd .mce-input-name-txt {
+	min-width: 200px;
+}
+#ptwSubSettingsWnd .modal-dialog {
+	width: 430px;
+}
+a.ptwEditArea {
+	outline: 0px solid transparent;
+}
+.ptwIconsLibList {
+	padding: 5px 15px 0;
+}
+.ptwIconLibItem {
+	font-size: 18px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	color: #000;
+	cursor: pointer;
+}
+.ptwIconLibItem:hover {
+	background-color: #09c9da;
+	color: #fff;
+}
+/*.ptwIconLibItem:hover .ptwIconLibPrev {
+	font-size: 24px;
+}*/
+.ptwIconLibTitle {
+	margin-left: 5px;
+}
+.ptwIconsLibSearchTxt {
+	width: 100%;
+	padding: 5px;
+}
+.ptwNothingFoundKeys {
+	background-color: #09c9da;
+	border-radius: 3px;
+	padding: 2px 7px;
+}
+.ptwOptIconBtn {
+	font-size: 20px;
+}
+/*Movable elements*/
+.ptwMoveHandler {
+	position: absolute;
+	z-index: 10000;
+	cursor: pointer;
+	padding: 5px 10px;
+}
+.ptwMoveHandler.sortInProgress {
+	background-color: rgba(45, 34, 52, 0.96);
+	border-radius: 3px;
+}
+.supsystic-plugin .ptwMoveHandler i {
+	color: #fff;
+}
+.supsystic-plugin .ptwMoveHandler i:hover,
+.supsystic-plugin .ptwMoveHandler.sortInProgress i{
+	color: #09c9da;
+}
+.ptwElMenuMoveHandlerPlace {
+	width: 16px;	/*Size of real icon*/
+	height: 19px;	/*Size of real icon*/
+	display: inline-block;
+}
+/*Badge position settings*/
+.ptwTableBadgePositionsShell {
+	width: 300px;
+	position: relative;
+	height: 300px;
+	border: 1px solid #555;
+	border-bottom: none;
+}
+.ptwTableBadgePosition {
+	position: absolute;
+	outline: 1px solid #555;
+	cursor: pointer;
+}
+.ptwTableBadgePosition.active,
+.ptwTableBadgePosition:hover {
+	outline-color: #09c9da;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, #4ae8ea 1px, #4ae8ea 7px);
+	z-index: 101;
+}
+.ptwTableBadgePosition[data-pos="left"] {
+	width: 49px;
+	height: 200px;
+	top: 50px;
+	left: 0;
+}
+.ptwTableBadgePosition[data-pos="left-top"] {
+	width: 49px;
+	height: 49px;
+	top: 0px;
+	left: 0px;
+}
+.ptwTableBadgePosition[data-pos="top"] {
+	width: 198px;
+	height: 49px;
+	top: 0px;
+	left: 50px;
+}
+.ptwTableBadgePosition[data-pos="right-top"] {
+	width: 49px;
+	height: 49px;
+	top: 0px;
+	right: 0px;
+}
+.ptwTableBadgePosition[data-pos="right"] {
+	width: 49px;
+	height: 200px;
+	top: 50px;
+	right: 0;
+}
+#ptwBadgesLibWnd .ptwTableSetting {
+	margin: 0 auto;
+}
+#ptwBadgesLibWnd .ptwTableBadgePositionRow {
+	width: 100%;
+}
+#ptwTableBadgeColTest {
+	width: 300px;
+	height: 400px;
+	border: 1px solid #555;
+	overflow: hidden;
+	position: relative;
+}
+/*Additional cells edit buttons (remove row, tooltips)*/
+#ptwTooltipEditBtnShellExl,
+#ptwRemoveRowBtnExl,
+#ptwAddRowAfterBtnExl,
+#ptwAddRowBeforeBtnExl,
+#ptwMoveCellBtnExl,
+#PtwAddHtmlAttribute,
+#ptwMceSubMenyAddHtmlAttr,
+#ptwAddHtmlAttribute
+{
+	display: none;
+}
+.ptwAddHtmlAttribute {
+	display: inline-block;
+}
+.ptwCellEditBtnsShell {
+	z-index: 101;
+	position: absolute;
+	background-color: rgba(45, 34, 52, 0.96);
+	border-radius: 3px;
+	left: 100%;
+	width: 165px;
+	top: 25%;
+	text-align: center;
+}
+.ptwCol:last-child .ptwCellEditBtnsShell {
+	right: 100%;
+	left: auto;
+}
+.ptwCol:last-child .ptwCellEditBtnsShell::before {
+	/*content: none;*/
+
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	/*border-right: 5px solid rgba(45, 34, 52, 0.96);*/
+	border-right: none;
+	border-left: 5px solid rgba(45, 34, 52, 0.96);
+	right: -5px;
+	left: auto;
+}
+.ptwCellEditBtnsShell::before {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent; 
+	border-right: 5px solid rgba(45, 34, 52, 0.96); 
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: -5px;
+}
+.ptwTooltipEditBtnShell {
+	display: inline-block;
+}
+.ptwAddCellEditBtn {
+	padding: 5px;
+	cursor: pointer;
+	width: 21px;
+	box-sizing: content-box;
+	display: inline-block;
+	position: relative;
+}
+.ptwAddCellEditBtn i {
+	color: #fff;
+}
+.ptwAddCellEditBtn:hover i {
+	color: #09c9da;
+}
+.ptwTooltipEditWnd {
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	
+	background-color: rgba(45, 34, 52, 0.96);
+	border-radius: 3px;
+	padding: 6px;
+	
+	bottom: 31px;
+	right: 35px;
+}
+.ptwTooltipEditWnd textarea {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.mce-ico.mce-i-remove.fa-trash-o {
+	opacity: 0.9;
+    font: normal normal normal 14px/1 FontAwesome;
+    color: #fff;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    line-height: 16px;
+}
+.ptwElMenuSubPanelIconSize [data-size] {
+    padding: 5px 8px;
+    cursor: pointer;
+}
+.ptwElMenuSubPanelIconSize [data-size].active,
+.ptwElMenuSubPanelIconSize [data-size]:hover {
+    background: #F72497;
+}
+#ptwElementButtonDefaultTemplate {
+	display: none;
+}
+.ptwTextAlignColumn {
+	display: inline-block;
+	border-right: 1px solid #5b4b63;
+	padding: 0 6px 0 0;
+	margin: 0 7px 0 0;
+}
+.ptwTextAlignColumn .ptwOptIconBtn {
+	color: #fff;
+	font-size: 14px;
+	padding: 0 4px 2px 1px;
+}
+#ptwTextAlignColumn {
+	display: none;
+}
+
+.ptwPostLinkList {
+	padding: 3px 15px !important;
+}
+.ptwElMenuSubPanel .octPostLinkList {
+	padding: 3px 7px 0 0 !important;
+}
+.ptwPostLinkList li {
+	padding: 5px;
+    cursor: pointer;
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	text-align: left !important;
+}
+.ptwPostLinkList li:hover {
+    background: #F72497;
+}
+.ptwPostLinkList+.slimScrollBar {
+	max-width: 4px;
+}
+.ptwElMenu .ptwElMenuSubPanel[data-sub-panel="iconlink"] input[name="icon_item_link"]:focus,
+.ptwElMenu .ptwElMenuSubPanel[data-sub-panel="link"] input[name="btn_item_link"]:focus {
+	outline-color: #C81878;
+    outline-style: auto;
+    outline-width: 5px;
+}
+.ptwCellEditBtnsShell .ptwTextAlignSwitch {
+	opacity: .25;
+	cursor: pointer;
+}
+.ptwCellEditBtnsShell .ptwTextAlignSwitch.active {
+	opacity: 1;
+}
+#ptwCombiningPrevBtnExl,
+#ptwCombiningNextBtnExl,
+#ptwAddOneCellInColumn {
+	display: none;
+}

@@ -1,0 +1,300 @@
+/*Blocks settings*/
+.ptwBlock {
+	background-color: transparent;
+	position: relative;
+	line-height: normal;
+}
+.ptwBlock, .ptwBlock * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	line-height: initial;
+	margin: initial;
+	padding: initial;
+	vertical-align: initial;
+	outline: initial;
+	text-align: inherit;
+}
+.ptwBlock p {
+	text-align: inherit;
+}
+/*#wpadminbar {
+	display: none;
+}*/
+/*bootstrap spin class*/
+.glyphicon-spin {
+	-webkit-animation: spin 1000ms infinite linear;
+	animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+.ptwShowSmooth {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s linear 0.2s, opacity 0.2s linear;
+}
+.ptwShowSmooth.active {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+	z-index: 10000;
+}
+/*Block Elements*/
+.ptwEl {
+	display: inline-block;
+    min-width: 15px;
+    position: relative;
+}
+.ptwElImg {
+	display: inline-block;
+}
+.ptwElImg img {
+	width: 100%;	/*responsive images*/
+	height: auto;
+}
+.ptwElInput,
+.ptwInputShell {
+	display: inline-block;
+}
+.ptwElOverlay {
+	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	top: 0;
+  	left: 0;
+  	display: none;
+}
+.ptwCol {
+	float: left;
+}
+.ptwCell {
+	position: relative;
+}
+/*tables data aligment*/
+.ptwBlockContent .ptwCol .ptwColHeader,
+.ptwBlockContent .ptwCol .ptwColDesc,
+.ptwBlockContent .ptwCol .ptwRows .ptwCell,
+.ptwBlockContent .ptwCol .ptwColFooter {
+	text-align: center;
+}
+.ptwBlock.ptwAlign_left p,
+.ptwBlock.ptwAlign_left .ptwBlockContent .ptwCol .ptwColHeader,
+.ptwBlock.ptwAlign_left .ptwBlockContent .ptwCol .ptwColDesc,
+.ptwBlock.ptwAlign_left .ptwBlockContent .ptwCol .ptwRows .ptwCell,
+.ptwBlock.ptwAlign_left .ptwBlockContent .ptwCol .ptwColFooter {
+	text-align: left;
+}
+.ptwBlock.ptwAlign_right p,
+.ptwBlock.ptwAlign_right .ptwBlockContent .ptwCol .ptwColHeader,
+.ptwBlock.ptwAlign_right .ptwBlockContent .ptwCol .ptwColDesc,
+.ptwBlock.ptwAlign_right .ptwBlockContent .ptwCol .ptwRows .ptwCell,
+.ptwBlock.ptwAlign_right .ptwBlockContent .ptwCol .ptwColFooter {
+	text-align: right;
+}
+.ptwBlock.ptwAlign_center p,
+.ptwBlock.ptwAlign_center .ptwBlockContent .ptwCol .ptwColHeader,
+.ptwBlock.ptwAlign_center .ptwBlockContent .ptwCol .ptwColDesc,
+.ptwBlock.ptwAlign_center .ptwBlockContent .ptwCol .ptwRows .ptwCell,
+.ptwBlock.ptwAlign_center .ptwBlockContent .ptwCol .ptwColFooter {
+	text-align: center;
+}
+.ptwCol .ptwElArea {
+	/*overflow: hidden;*/
+	position: relative;
+}
+.ptwContainer {
+	clear: both;
+	text-align: center;
+}
+/*Badges*/
+.ptwColBadge {
+	position: absolute;
+	z-index: 1002;
+	top: 0;
+	overflow: hidden;
+}
+.ptwColBadgeContent {
+	padding: 5px 10px;
+	margin: 0 auto;
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+}
+.ptwColBadge.ptwColBadge-left .ptwColBadgeContent {
+	transform: rotate(-90deg);
+	border-bottom-left-radius: 5px;
+	transform-origin: left top;
+}
+.ptwColBadge.ptwColBadge-left-top .ptwColBadgeContent {
+	transform: rotate(-45deg);
+	transform-origin: center bottom;
+}
+.ptwColBadge.ptwColBadge-right-top .ptwColBadgeContent {
+	transform: rotate(45deg);
+	transform-origin: center bottom;
+}
+.ptwColBadge.ptwColBadge-right .ptwColBadgeContent {
+	transform: rotate(90deg);
+	border-bottom-right-radius: 5px;
+	transform-origin: right top;
+}
+.ptwColBadge.ptwColBadge-top .ptwColBadgeContent {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.ptwColBadge.ptwColBadge-top {
+	width: 100%;
+}
+.ptwColBadge.ptwColBadge-left,
+.ptwColBadge.ptwColBadge-left-top {
+	left: 0;
+
+}
+.ptwColBadge.ptwColBadge-right,
+.ptwColBadge.ptwColBadge-right-top {
+	right: 0;
+}
+.ptwElInput [data-icon]:before,
+.ptwElInput[data-icon]:before,
+.ptwBlock [data-icon]:before {
+	content: none;
+}
+.ptwBlock {
+
+}
+.ptwTableAlign_left.ptwBlock {
+	float: left;
+}
+.ptwTableAlign_right.ptwBlock {
+	float: right;
+}
+.ptwTableAlign_center.ptwBlock {
+	margin: 0 auto;
+}
+.ptwBlock .ptwBlockContent .ptwCol .ptwColHeader.ptwCell.ptwCellAlignLeft,
+.ptwBlock .ptwBlockContent .ptwCol .ptwRows .ptwCell.ptwCellAlignLeft {
+	text-align: left;
+}
+
+.ptwBlock .ptwBlockContent .ptwCol .ptwColHeader.ptwCell.ptwCellAlignCenter,
+.ptwBlock .ptwBlockContent .ptwCol .ptwRows .ptwCell.ptwCellAlignCenter {
+	text-align: center;
+}
+.ptwBlock .ptwBlockContent .ptwCol .ptwColHeader.ptwCell.ptwCellAlignRight,
+.ptwBlock .ptwBlockContent .ptwCol .ptwRows .ptwCell.ptwCellAlignRight {
+	text-align: right;
+}
+.ptwBlock .ptwCol .ptwColDesc .ptwEl .ptwPriceTitle {
+	white-space: nowrap;
+}
+.ptwContainer * {
+	border: none;
+	white-space: normal;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*content wrapper*/
+.ptwSwitchWrapper {
+	float: left;
+	width: 100%;
+	height: auto;
+}
+/*button wrapper*/
+.ptwSwitchContent {
+	float: none;
+	vertical-align: middle;
+	position: relative;
+	border-radius: 35px;
+	-moz-border-radius: 35px;
+	-webkit-border-radius: 35px;
+	-o-border-radius: 35px;
+	height: 54px;
+	display: inline-block;
+	background: #FFFFFF;
+	min-width: 350px;
+	width: auto;
+	text-align: center;
+}
+/*button*/
+.ptwSwitchButton {
+	cursor: pointer !important;
+	position: relative;
+	z-index: 1;
+	top: 3px;
+	font-family: Asap;
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+	width: 50%;
+	height: 46px;
+	line-height: 46px;
+}
+/*button selected*/
+.ptwSwitchButton.selected {
+	border-radius: 22px;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	-o-border-radius: 22px;
+}
+/*buttons background*/
+.ptwSwitchButtonBackground {
+	letter-spacing: normal !important;
+	outline: 0;
+	text-decoration: none;
+	text-transform: none;
+	cursor: pointer !important;
+	top: 3px;
+	position: absolute !important;
+	border-radius: 22px;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	-o-border-radius: 22px;
+	z-index: 0 !important;
+	transition: left ease-in-out .4s;
+	-moz-transition: left ease-in-out .4s;
+	-webkit-transition: left ease-in-out .4s;
+	-o-transition: left ease-in-out .4s;
+	font-family: Asap;
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+	width: 50%;
+	height: 46px;
+	line-height: 46px;
+	color: #FFFFFF;
+	left: 0.7%;
+}
+.ptwSwitchWrapper input[type=radio]:checked:before{
+	width: -2px!important;
+}
+.ptwBlock .ptwCell .ptwEl{
+	visibility: visible !important;
+}
+.ptwCol .ptwPropValAttrLink {
+	color: inherit;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.ptwTableElementContent .ptwActBtn {
+	text-align: center;
+}

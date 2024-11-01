@@ -1,0 +1,9 @@
+.ptwErrorMsg {
+    color: #fa4e7f;
+}
+.ptwSuccessMsg {
+    color: #4ae8ea;
+}
+.ptwInputError {
+    border: 1px #fa4e7f solid !important;
+}

@@ -1,0 +1,220 @@
+.table-list {
+	margin-top: 40px;
+}
+.table-list .table-list-item {
+	max-width: 400px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	overflow: hidden;
+}
+.table-list .table-list-item.active,
+.table-list .table-list-item:active {
+	outline: 5px solid rgba(0, 0, 0, 0.52);
+}
+.table-list .table-list-item img {
+	max-width: 400px;
+	height: auto;
+}
+.table-list .table-list-item .preset-select-btn {
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%);
+	background-color: #ffffff;
+	font-size: 14px;
+	line-height: 35px;
+}
+.table-list .table-list-item.active .preset-select-btn,
+.table-list .table-list-item:active .preset-select-btn {
+	color: #000;
+	background-color: #4ae8ea;
+}
+#ptwPagesTbl_cb {
+	width: 23px !important;
+}
+.ptwTableSettingsShell {
+	padding: 10px;
+	margin: 0 0 20px 0;
+}
+.ptwTableSetting {
+	padding: 7px;
+	float: left;
+	min-height: 71px;
+}
+.ptwTableSetting,
+.ptwTableSetting p {
+	font-size: 15px;
+}
+.ptwTableSetting .fa-question.supsystic-tooltip {
+	margin-left: 10px;
+}
+#ptwTableEditableLabelShell {
+	cursor: pointer;
+	color: #000;
+}
+#ptwTableEditableLabelTxt {
+	display: none;
+}
+#ptwTableMainControllsShell .ptwTableSaveBtn {
+	margin-right: 10px;
+}
+.ptwTableSettingsShell .ptwTableSetting {
+	    position: relative;
+}
+.ptwHeaderColorPicker {
+	position: absolute;
+    right: 0;
+    top: 70%;
+    z-index: 999;
+}
+.ptwHeaderColorPicker.hidden {
+	display: none;
+}
+#containerWrapper .chosen-container{
+	width:120px!important;
+}
+.ptwSettingsTabs{
+	margin-bottom: 20px;
+}
+.field-options-list .option{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-bottom: 5px;
+}
+.field-options-list .option div{
+	padding-left: 15px;
+}
+
+.field-options-list .icheckbox_minimal{
+	display: inline-flex!important;
+}
+.ptwWooImportWrapper {
+	display: block;
+	padding: 0 0 20px 0;
+}
+.ptwWooProductsWrapper {
+	margin-right: 20px;
+}
+.ptwWooProductPropertyWrapper,
+.ptwWooProductsWrapper {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.ptwWooPropListBorder {
+	border: 1px solid #000;
+	display: inline-block;
+	min-width: 300px;
+	padding: 10px;
+}
+.ptwWooProductPropCapt2 {
+	font-size: 1.5em;
+	font-weight: 500;
+}
+.ptwWooProductListWrapper,
+.ptwWooPropList {
+	margin: 10px 0;
+	max-height: 400px;
+	overflow: auto;
+	position: relative;
+}
+.ptwWplItemTitle {
+	max-width: 365px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.ptwWplwItemWrapper {
+	width: 400px;
+	min-height: 30px;
+}
+.uiProductSortablePlaceholder,
+.uiSortablePlaceholder,
+.ptwWooProductListWrapper .ptwWplwItemWrapper,
+.ptwOnePropItem {
+	border: 1px solid #000;
+	margin: 20px 20px 0 20px;
+	position: relative;
+	padding: 5px;
+}
+.ptwWplwItemWrapper .ptwItemHandlerIcon,
+.ptwOnePropItem .ptwOnePiHandle {
+	position: absolute;
+	left: -15px;
+	top: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.ptwWplwItemWrapper .ptwItemRemoveIcon,
+.ptwOnePropItem .ptwOnePiTrash {
+	font-weight: bold;
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	cursor: pointer;
+}
+.ptwWplwItemWrapper .ptwItemHandlerIcon,
+.ptwWplwItemWrapper .ptwItemRemoveIcon {
+	top: 9px;
+}
+
+.ptwOnePropItem .ptwPropertySelList {
+	height: 28px;
+	max-width: 87%;
+}
+.uiProductSortablePlaceholder,
+.uiSortablePlaceholder {
+	background-color: #4ae8ea;
+	height: 40px;
+	border: 0px;
+	margin-left: 20px;
+}
+.ptwCell .ptwCellTextEntry[data-type="img"] {
+	max-width: 100%;
+}
+.ptwAplOneItem {
+	margin: 6px 0;
+}
+.ui-dialog .ui-dialog-buttonpane button.ui-button {
+	padding: 0 10px;
+}
+.ptwUnsortablePropItems {
+
+}
+.ui-dialog .ui-dialog-content.ptwProductsDialog {
+	overflow: hidden;
+	min-height: 300px !important;
+}
+.ptwAllProductListWrap {
+	overflow-y: auto;
+	max-height: 100%;
+	position: absolute;
+	top: 67px;
+	bottom: 0;
+	left: 16px;
+	right: 16px;
+}
+.ptwAplSearchContainer {
+	padding: 5px 0 5px;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+	margin: 0 0 5px;
+}
+.ptwAplSearchLabel {
+	display: inline-block;
+	vertical-align: middle !important;
+	max-width: 115px;
+}
+.ptwAplSearchInp {
+	display: inline-block;
+	vertical-align: middle !important;
+	width: 150px;
+}
+.ptwAplSearchBtn {
+	display: inline-block;
+	vertical-align: middle !important;
+}

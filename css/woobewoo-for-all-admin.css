@@ -1,0 +1,7 @@
+/*remove duplicated WP menu item*/
+#toplevel_page_pricing-table-for-woo .wp-submenu.wp-submenu-wrap .wp-first-item {
+	display: none;
+}
+.ptwDisplNone {
+	display: none;
+}
